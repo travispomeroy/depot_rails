@@ -1,0 +1,616 @@
+Started GET "/" for 127.0.0.1 at 2025-07-16 18:05:40 -0400
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='Depot'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Depot'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Depot'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /opt/homebrew/lib/ruby/gems/3.4.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /opt/homebrew/lib/ruby/gems/3.4.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 3.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Depot'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-07-16 22:12:40.896614', '2025-07-16 22:12:40.896615') RETURNING "key" /*application='Depot'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Depot'*/[0m
+Migrating to CreateProducts (20250716220722)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Depot'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "image_url" varchar, "price" decimal(8,2), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Depot'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250716220722') RETURNING "version" /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Depot'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Depot'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-07-16 18:26:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Depot'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /opt/homebrew/lib/ruby/gems/3.4.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /opt/homebrew/lib/ruby/gems/3.4.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-07-16 18:27:04 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 0.0ms)
+Completed 200 OK in 50ms (Views: 10.4ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/assets/application-8b441ae0.css" for 127.0.0.1 at 2025-07-16 18:27:04 -0400
+Started GET "/assets/tailwind-e0c7e7b5.css" for 127.0.0.1 at 2025-07-16 18:27:04 -0400
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for 127.0.0.1 at 2025-07-16 18:27:04 -0400
+Started GET "/assets/controllers/application-3affb389.js" for 127.0.0.1 at 2025-07-16 18:27:04 -0400
+Started GET "/assets/controllers/hello_controller-708796bd.js" for 127.0.0.1 at 2025-07-16 18:27:04 -0400
+Started GET "/assets/controllers/index-ee64e1f1.js" for 127.0.0.1 at 2025-07-16 18:27:04 -0400
+Started GET "/assets/turbo.min-3a2e143f.js" for 127.0.0.1 at 2025-07-16 18:27:04 -0400
+Started GET "/assets/application-cb59a07b.js" for 127.0.0.1 at 2025-07-16 18:27:04 -0400
+Started GET "/assets/stimulus.min-4b1e420e.js" for 127.0.0.1 at 2025-07-16 18:27:04 -0400
+Started GET "/" for 127.0.0.1 at 2025-07-17 15:57:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Depot'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /opt/homebrew/lib/ruby/gems/3.4.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /opt/homebrew/lib/ruby/gems/3.4.0/gems/railties-8.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 15:58:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/products/new" for 127.0.0.1 at 2025-07-17 16:01:05 -0400
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 7.3ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 10.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | GC: 0.3ms)
+Completed 200 OK in 58ms (Views: 17.3ms | ActiveRecord: 1.2ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:01:05 -0400
+Started GET "/assets/tailwind-b83c0b9f.css" for 127.0.0.1 at 2025-07-17 16:01:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:01:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:01:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/products/new" for 127.0.0.1 at 2025-07-17 16:02:10 -0400
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 11.3ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 11.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 14.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:02:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:02:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:02:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/products/new" for 127.0.0.1 at 2025-07-17 16:02:22 -0400
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 6.0ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 7.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:02:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:02:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:02:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/products" for ::1 at 2025-07-17 16:02:52 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 7.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-17 16:02:52 -0400
+Started GET "/assets/turbo.min-3a2e143f.js" for ::1 at 2025-07-17 16:02:52 -0400
+Started GET "/assets/stimulus.min-4b1e420e.js" for ::1 at 2025-07-17 16:02:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for ::1 at 2025-07-17 16:02:52 -0400
+Started GET "/assets/controllers/application-3affb389.js" for ::1 at 2025-07-17 16:02:52 -0400
+Started GET "/assets/controllers/hello_controller-708796bd.js" for ::1 at 2025-07-17 16:02:52 -0400
+Started GET "/assets/controllers/index-ee64e1f1.js" for ::1 at 2025-07-17 16:02:52 -0400
+Started GET "/assets/application-8b441ae0.css" for ::1 at 2025-07-17 16:02:52 -0400
+Started GET "/assets/application-cb59a07b.js" for ::1 at 2025-07-17 16:02:52 -0400
+Started GET "/assets/tailwind-b83c0b9f.css" for ::1 at 2025-07-17 16:02:52 -0400
+Started GET "/products" for ::1 at 2025-07-17 16:03:02 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (3.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 7.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 5.8ms | ActiveRecord: 3.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-17 16:03:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:03:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:03:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-17 16:03:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-17 16:03:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:03:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:03:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-17 16:03:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-07-17 16:03:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:03:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:03:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/products" for 127.0.0.1 at 2025-07-17 16:03:17 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:14
+  Rendered products/index.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 4.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 16:03:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/products/new" for 127.0.0.1 at 2025-07-17 16:10:50 -0400
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 7.9ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 9.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | GC: 0.3ms)
+Completed 200 OK in 42ms (Views: 15.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2025-07-17 16:13:36 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "product" => {"title" => "Docker for Rails Developers", "description" => "<p>\r\n<em>Build, Ship, and Run Your Applications\r\nEverywhere</em> Docker does for DevOps what Rails did for web development -- it gives you a new set of superpowers.  Gone are \"works on my machine\" woes and lengthy setup tasks, replaced instead by a simple, consistent, Docker-based development environment that will have your team up and running in seconds.\r\n</p>", "image_url" => "ridocker.jpg", "price" => "19.95"}, "commit" => "Create Product"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Depot',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:27:in 'block in ProductsController#create'
+  [1m[36mProduct Create (2.8ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES ('Docker for Rails Developers', '<p>
+<em>Build, Ship, and Run Your Applications
+Everywhere</em> Docker does for DevOps what Rails did for web development -- it gives you a new set of superpowers.  Gone are "works on my machine" woes and lengthy setup tasks, replaced instead by a simple, consistent, Docker-based development environment that will have your team up and running in seconds.
+</p>', 'ridocker.jpg', 19.95, '2025-07-17 20:13:36.269001', '2025-07-17 20:13:36.269001') RETURNING "id" /*action='create',application='Depot',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:27:in 'block in ProductsController#create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Depot',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:27:in 'block in ProductsController#create'
+Redirected to http://127.0.0.1:3000/products/1
+Completed 302 Found in 47ms (ActiveRecord: 3.5ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2025-07-17 16:13:36 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='show',application='Depot',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:63:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 6.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-07-17 16:14:21 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:14
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/_product.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 10.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 11.3ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2025-07-17 16:14:35 -0400
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='show',application='Depot',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:63:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.2ms)
+Completed 200 OK in 31ms (Views: 3.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-07-17 16:14:52 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:14
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/_product.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 12.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 13.0ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Depot'*/[0m
+  [1m[36mProduct Delete All (0.1ms)[0m  [1m[31mDELETE FROM "products" /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Depot'*/[0m
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES ('Docker for Rails Developers', '<p>
+      <em>Build, Ship, and Run Your Applications Everywhere</em> Docker does
+      for DevOps what Rails did for web development—it gives you a new set
+      of superpowers. Gone are “works on my machine” woes and lengthy setup
+      tasks, replaced instead by a simple, consistent, Docker-based
+      development environment that will have your team up and running in
+      seconds.  Gain hands-on, real-world experience with a tool that’s
+      rapidly becoming fundamental to software development. Go from zero all
+      the way to production as Docker transforms the massive leap of
+      deploying your app in the cloud into a baby step.
+      </p>', 'ridocker.jpg', 19.95, '2025-07-17 20:28:30.928966', '2025-07-17 20:28:30.928966') RETURNING "id" /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Depot'*/[0m
+  [1m[36mProduct Create (3.3ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES ('Design and Build Great Web APIs', '<p>
+      <em>Robust, Reliable, and Resilient</em>
+      APIs are transforming the business world at an increasing pace. Gain
+      the essential skills needed to quickly design, build, and deploy
+      quality web APIs that are robust, reliable, and resilient. Go from
+      initial design through prototyping and implementation to deployment of
+      mission-critical APIs for your organization. Test, secure, and deploy
+      your API with confidence and avoid the “release into production”
+      panic. Tackle just about any API challenge with more than a dozen
+      open-source utilities and common programming patterns you can apply
+      right away.
+      </p>', 'maapis.jpg', 24.95, '2025-07-17 20:28:30.931045', '2025-07-17 20:28:30.931045') RETURNING "id" /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Depot'*/[0m
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES ('Modern CSS with Tailwind', '<p>
+      <em>Flexible Styling Without the Fuss</em>
+      Tailwind CSS is an exciting new CSS framework that allows you to
+      design your site by composing simple utility classes to create complex
+      effects. With Tailwind, you can style your text, move your items on
+      the page, design complex page layouts, and adapt your design for
+      devices from a phone to a wide-screen monitor. With this book, you’ll
+      learn how to use the Tailwind for its flexibility and its consistency,
+      from the smallest detail of your typography to the entire design of
+      your site.
+      </p>', 'tailwind.jpg', 18.95, '2025-07-17 20:28:30.941440', '2025-07-17 20:28:30.941440') RETURNING "id" /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Depot'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Depot'*/[0m
+  [1m[36mProduct Delete All (0.4ms)[0m  [1m[31mDELETE FROM "products" /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Depot'*/[0m
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES ('Docker for Rails Developers', '<p>
+      <em>Build, Ship, and Run Your Applications Everywhere</em> Docker does
+      for DevOps what Rails did for web development—it gives you a new set
+      of superpowers. Gone are “works on my machine” woes and lengthy setup
+      tasks, replaced instead by a simple, consistent, Docker-based
+      development environment that will have your team up and running in
+      seconds.  Gain hands-on, real-world experience with a tool that’s
+      rapidly becoming fundamental to software development. Go from zero all
+      the way to production as Docker transforms the massive leap of
+      deploying your app in the cloud into a baby step.
+      </p>', 'ridocker.jpg', 19.95, '2025-07-17 20:28:49.455484', '2025-07-17 20:28:49.455484') RETURNING "id" /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Depot'*/[0m
+  [1m[36mProduct Create (3.4ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES ('Design and Build Great Web APIs', '<p>
+      <em>Robust, Reliable, and Resilient</em>
+      APIs are transforming the business world at an increasing pace. Gain
+      the essential skills needed to quickly design, build, and deploy
+      quality web APIs that are robust, reliable, and resilient. Go from
+      initial design through prototyping and implementation to deployment of
+      mission-critical APIs for your organization. Test, secure, and deploy
+      your API with confidence and avoid the “release into production”
+      panic. Tackle just about any API challenge with more than a dozen
+      open-source utilities and common programming patterns you can apply
+      right away.
+      </p>', 'maapis.jpg', 24.95, '2025-07-17 20:28:49.457563', '2025-07-17 20:28:49.457563') RETURNING "id" /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Depot'*/[0m
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES ('Modern CSS with Tailwind', '<p>
+      <em>Flexible Styling Without the Fuss</em>
+      Tailwind CSS is an exciting new CSS framework that allows you to
+      design your site by composing simple utility classes to create complex
+      effects. With Tailwind, you can style your text, move your items on
+      the page, design complex page layouts, and adapt your design for
+      devices from a phone to a wide-screen monitor. With this book, you’ll
+      learn how to use the Tailwind for its flexibility and its consistency,
+      from the smallest detail of your typography to the entire design of
+      your site.
+      </p>', 'tailwind.jpg', 18.95, '2025-07-17 20:28:49.468182', '2025-07-17 20:28:49.468182') RETURNING "id" /*application='Depot'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Depot'*/[0m
+Started GET "/products" for 127.0.0.1 at 2025-07-17 16:29:46 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT 1 /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:14
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/_product.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered products/_product.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered products/_product.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 11.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 13.9ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-07-17 16:51:36 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (Duration: 20.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | GC: 0.3ms)
+Completed 200 OK in 52ms (Views: 25.6ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 3.2ms)
+
+
+Started GET "/assets/tailwind-3c5ca3ae.css" for 127.0.0.1 at 2025-07-17 16:51:36 -0400
+Started GET "/assets/maapis-12ec1aab.jpg" for 127.0.0.1 at 2025-07-17 16:51:36 -0400
+Started GET "/assets/ridocker-45c032aa.jpg" for 127.0.0.1 at 2025-07-17 16:51:36 -0400
+Started GET "/assets/tailwind-05cb057f.jpg" for 127.0.0.1 at 2025-07-17 16:51:37 -0400
+Started GET "/products" for 127.0.0.1 at 2025-07-17 16:53:06 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (Duration: 25.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | GC: 0.1ms)
+Completed 200 OK in 50ms (Views: 27.4ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-07-17 16:53:20 -0400
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Depot',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:22
+  Rendered products/index.html.erb within layouts/application (Duration: 16.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 26.6ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2025-07-17 17:08:00 -0400
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 9.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2025-07-17 17:08:02 -0400
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "product" => {"title" => "", "description" => "", "image_url" => "", "price" => ""}, "commit" => "Create Product"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Depot',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:27:in 'block in ProductsController#create'
+  [1m[36mProduct Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."title" = '' LIMIT 1 /*action='create',application='Depot',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:27:in 'block in ProductsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='create',application='Depot',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:27:in 'block in ProductsController#create'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 10.5ms | GC: 2.9ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 10.8ms | GC: 2.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 2.9ms)
+Completed 422 Unprocessable Content in 53ms (Views: 14.9ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:19:12 -0400
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  Rendered store/index.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.1ms)
+Completed 200 OK in 24ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:27:04 -0400
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:11
+  Rendered store/index.html.erb within layouts/application (Duration: 11.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 15.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/tailwind-41321dc8.css" for 127.0.0.1 at 2025-07-17 20:27:04 -0400
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:36:16 -0400
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:11
+  Rendered store/index.html.erb within layouts/application (Duration: 7.8ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.1ms)
+Completed 200 OK in 39ms (Views: 12.5ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/assets/tailwind-a6f9df9a.css" for 127.0.0.1 at 2025-07-17 20:36:16 -0400
+Started GET "/assets/logo-ee79f428.svg" for 127.0.0.1 at 2025-07-17 20:36:16 -0400
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-07-17 20:37:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:38:26 -0400
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:11
+  Rendered store/index.html.erb within layouts/application (Duration: 7.3ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 0.5ms)
+Completed 200 OK in 36ms (Views: 12.3ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:48:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Depot'*/[0m
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:11
+  Rendered store/index.html.erb within layouts/application (Duration: 24.8ms | GC: 6.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | GC: 6.5ms)
+Completed 200 OK in 74ms (Views: 31.6ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 7.3ms)
+
+
+Started GET "/assets/tailwind-3cba4102.css" for 127.0.0.1 at 2025-07-17 20:48:19 -0400
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:51:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Depot'*/[0m
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("products"."updated_at") AS timestamp FROM "products" /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:11
+Read fragment views/store/index:0e153ac4b16a086051bfedff04c20f57/products/query-6da0c1bd8d5af4d26cf1e3ad636ad28f-3-20250717202849468182 (2.0ms)
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:12
+Read fragment views/store/index:0e153ac4b16a086051bfedff04c20f57/products/6-20250717202849457563 (1.4ms)
+Write fragment views/store/index:0e153ac4b16a086051bfedff04c20f57/products/6-20250717202849457563 (0.1ms)
+Read fragment views/store/index:0e153ac4b16a086051bfedff04c20f57/products/5-20250717202849455484 (0.1ms)
+Write fragment views/store/index:0e153ac4b16a086051bfedff04c20f57/products/5-20250717202849455484 (0.6ms)
+Read fragment views/store/index:0e153ac4b16a086051bfedff04c20f57/products/7-20250717202849468182 (5.4ms)
+Write fragment views/store/index:0e153ac4b16a086051bfedff04c20f57/products/7-20250717202849468182 (0.3ms)
+Write fragment views/store/index:0e153ac4b16a086051bfedff04c20f57/products/query-6da0c1bd8d5af4d26cf1e3ad636ad28f-3-20250717202849468182 (0.1ms)
+  Rendered store/index.html.erb within layouts/application (Duration: 47.5ms | GC: 6.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 52.5ms | GC: 6.7ms)
+Completed 200 OK in 96ms (Views: 52.3ms | ActiveRecord: 3.2ms (2 queries, 0 cached) | GC: 7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:52:09 -0400
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) AS "size", MAX("products"."updated_at") AS timestamp FROM "products" /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:11
+Read fragment views/store/index:0e153ac4b16a086051bfedff04c20f57/products/query-6da0c1bd8d5af4d26cf1e3ad636ad28f-3-20250717202849468182 (11.6ms)
+  Rendered store/index.html.erb within layouts/application (Duration: 12.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | GC: 0.3ms)
+Completed 200 OK in 41ms (Views: 15.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:52:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Depot'*/[0m
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:12
+  Rendered store/index.html.erb within layouts/application (Duration: 22.8ms | GC: 6.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | GC: 6.1ms)
+Completed 200 OK in 70ms (Views: 29.5ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 6.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:52:36 -0400
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:12
+  Rendered store/index.html.erb within layouts/application (Duration: 17.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | GC: 0.3ms)
+Completed 200 OK in 41ms (Views: 16.9ms | ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:52:37 -0400
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:12
+  Rendered store/index.html.erb within layouts/application (Duration: 9.4ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 0.4ms)
+Completed 200 OK in 41ms (Views: 13.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:52:37 -0400
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:12
+  Rendered store/index.html.erb within layouts/application (Duration: 8.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | GC: 0.3ms)
+Completed 200 OK in 37ms (Views: 10.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-07-17 20:52:38 -0400
+Processing by StoreController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC /*action='index',application='Depot',controller='store'*/[0m
+  ↳ app/views/store/index.html.erb:12
+  Rendered store/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 9.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
